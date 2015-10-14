@@ -1,8 +1,10 @@
+#This scripts moves files from local to AWS bucket and encrypts it
+
 require 'rubygems'
 require 'aws-sdk'
 
-bucket_name = 'gridx-modeling-data';
-file_dir = '/PG&E'
+bucket_name = 'BUCKET NAME';
+file_dir = 'DIRECTORY'
 
 Dir.glob(file_dir + '/**/*.pdf') do |file_name|
 #Dir.foreach(file_dir) do |file_name|
@@ -11,7 +13,7 @@ Dir.glob(file_dir + '/**/*.pdf') do |file_name|
     key = file_name
      
     # Get an instance of the S3 interface.
-    s3 = Aws::S3::Resource.new(region:'us-west-1')
+    s3 = Aws::S3::Resource.new(region:'us-west-22')
     fn = file_name.dup
     fn[0] = ''
     
